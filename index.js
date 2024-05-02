@@ -43,13 +43,13 @@ function generateCode(firstName, lastName, birthYear) {
     }
   }
 
-  // přidání roku narození na konec:
+  // přidání roku narození na konec vygenerovaného kódu:
   code += birthYear;
 
   return code;
 }
 
-// // Testování aplikace
+// // testování aplikace na statických datech:
 // var firstName = 'Jan';
 // var lastName = 'Novak';
 // var birthYear = '1990';
@@ -61,6 +61,7 @@ function generateCode(firstName, lastName, birthYear) {
 // var code2 = generateCode(firstName, lastName, birthYear);
 // console.log('Kód pro', firstName, lastName, 'je', code2);
 
+// funkce pro použití a zobrazení číselného kódu vygenerovaného z hodnot zadaných do formuláře:
 function generateAndDisplayCode() {
   var firstName = document.getElementById('jmeno').value;
   var lastName = document.getElementById('prijmeni').value;
@@ -69,5 +70,5 @@ function generateAndDisplayCode() {
   var code = generateCode(firstName, lastName, birthYear);
 
   var kodContainer = document.getElementById('kod-container');
-  kodContainer.innerHTML = '<p>Váš kód je: ' + code + '</p>';
+  kodContainer.innerHTML = `<p>ID: <strong> ${code} </strong></p>`;
 }
